@@ -33,19 +33,30 @@ This puts Popnote in `/Applications` and opens it. Run it again any time to upda
 
 ```sh
 brew install --cask bilal-psd/tap/popnote
+xattr -d com.apple.quarantine /Applications/Popnote.app
 ```
+
+The second line stops macOS blocking Popnote the first time it opens (see below). To update, run `brew upgrade --cask popnote` followed by the same `xattr` line.
 
 **Or download it** from the [latest release](https://github.com/bilal-psd/popnote/releases/latest), unzip it and drag Popnote into Applications.
 
 ### "Popnote can't be opened"
 
-Popnote isn't notarized by Apple (that needs a paid developer account), so if you installed with Homebrew or a download, macOS blocks it the first time:
+Popnote isn't notarized by Apple (that needs a paid developer account), so if you installed with Homebrew or a download, macOS blocks it the first time. The quickest fix is to remove the "downloaded" mark macOS puts on the app:
+
+```sh
+xattr -d com.apple.quarantine /Applications/Popnote.app
+```
+
+Then open Popnote as usual. Avoid `sudo spctl --master-disable`, which you may see suggested elsewhere: it turns off this check for every app on your Mac.
+
+Or do it from System Settings:
 
 1. Open Popnote and click **Done** on the warning.
 2. Go to **System Settings › Privacy & Security**, scroll down, and click **Open Anyway** next to the message about Popnote.
 3. Confirm with **Open Anyway**.
 
-You only need to do this once. The install script doesn't trigger the warning: macOS only checks apps marked as downloaded, which browsers and Homebrew do and `curl` doesn't.
+You only need to do this once per install or update. The install script doesn't trigger the warning: macOS only checks apps marked as downloaded, which browsers and Homebrew do and `curl` doesn't.
 
 ## Using Popnote
 
