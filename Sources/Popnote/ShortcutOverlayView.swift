@@ -14,7 +14,7 @@ final class ShortcutOverlayView: NSView {
     /// in the header.
     private let grid: [[Group]] = [
         [("notes", [("N", "new note"), ("[ ]", "previous / next"), ("O", "all notes")]),
-         ("this note", [("P", "pin"), ("C", "copy"), ("⌫", "move to trash")])],
+         ("this note", [("P", "pin"), ("C", "copy")])],
         [("writing", [("↩", "check / uncheck"), ("+ −", "text size")]),
          ("window", [("T", "keep on top"), ("R", "pop-up timer")])],
     ]
@@ -120,7 +120,7 @@ final class ShortcutOverlayView: NSView {
         path.lineWidth = 1
         path.stroke()
 
-        // Centred on the ink, not the line box, so "," "↩" and "⌫" sit in the
+        // Centred on the ink, not the line box, so "," and "↩" sit in the
         // middle just like the letters do.
         let font = Fonts.mono(11, weight: .bold)
         let symbol = color == theme.rule ? theme.text : color

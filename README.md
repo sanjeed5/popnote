@@ -68,7 +68,6 @@ You only need to do this once per install or update. The install script doesn't 
 | <kbd>⌘O</kbd> | All notes, with search, and Trash |
 | <kbd>⌘[</kbd> <kbd>⌘]</kbd> | Previous / next note (or swipe with two fingers) |
 | <kbd>⌘P</kbd> | Pin or unpin |
-| <kbd>⌘⌫</kbd> | Move to Trash |
 | <kbd>⌘C</kbd> | Copy the whole note (when nothing is selected) |
 | <kbd>⌘↩</kbd> | Check or uncheck an item |
 | <kbd>⌘+</kbd> <kbd>⌘−</kbd> | Bigger or smaller text |
@@ -82,7 +81,7 @@ Settings let you change the hotkey, how long notes last, the theme (Tokyo Night,
 
 <p align="center"><img src="docs/reminder.gif" width="720" alt="A short to-do list is typed into a note and ⌘R turns on the pop-up timer. The note is closed, and a few seconds later it pops back up on its own."></p>
 
-Deleted notes go to Trash for 7 days, so an accidental delete or an expired note can still be brought back from <kbd>⌘O</kbd> › Trash.
+Move a note to Trash from the Note menu. Deleted notes stay there for 7 days, so an accidental delete or an expired note can still be brought back from <kbd>⌘O</kbd> › Trash.
 
 ## Uninstall
 
